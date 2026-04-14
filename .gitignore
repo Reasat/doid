@@ -1,0 +1,18 @@
+# Credentials — never commit
+.env
+env/.env
+
+# Build artefacts — uploaded as GitHub Release assets
+doid.owl
+doid.yaml
+
+# Build intermediates
+tmp/
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+
+# Virtual env — uv.lock IS committed for reproducible CI builds
+.venv/
