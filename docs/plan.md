@@ -54,7 +54,12 @@ Intermediate: `tmp/transformed-doid.owl` is ROBOT-only and gitignored. Release a
 
 - **Docker:** `obolibrary/odkfull:v1.6` — `make dependencies && make all`.
 - **Release triggers:** `workflow_dispatch`, **weekly** cron (`0 0 * * 1`, Monday 00:00 UTC), and **push to `main`** when pipeline paths change. Rationale: DOID tracks the OBO PURL; a weekly run picks up upstream releases without tying every commit to a release; `workflow_dispatch` allows on-demand builds.
-- **Assets:** `doid.yaml`, `doid.owl` attached to GitHub Releases.
+- **Assets:** `doid.yaml`, `doid.owl` plus an ICD10WHO-style wget bundle for mondo-ingest:
+  - `mirror-doid.owl`
+  - `doid.db`
+  - `reports/mirror_signature-doid.tsv`, `reports/component_signature-doid.tsv`
+  - `mappings/doid.sssom.tsv`
+  - `metadata/doid-metrics.json`
 
 ### Phase 9 — Verify
 
